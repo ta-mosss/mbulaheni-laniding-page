@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mbulaheni Group Cleaning | Professional Cleaning & Maintenance Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Gold and White -->
+    <!-- Application Structure Plan: A single-page, scrollable "Service Showcase" structure was chosen to transform the static email into a dynamic, professional web presence. This design guides the user through a logical flow: a strong value proposition (Hero), interactive exploration of services (Our Services), reasons for trust (Why Choose Us?), and a clear call to action (Contact). This is more engaging and user-friendly than a text-heavy email, allowing potential clients to absorb information at their own pace and creating a stronger first impression. The logo has been added to the header for brand recognition. -->
+    <!-- Visualization & Content Choices: Report Info (Service List) -> Goal (Organize/Inform) -> Presentation (Interactive Cards) -> Interaction (Click to reveal details) -> Justification (Reduces initial clutter, encourages user engagement) -> Library/Method (Vanilla JS). Report Info (Company Strengths) -> Goal (Inform/Build Trust) -> Presentation (Icon + Text Grid) -> Interaction (Subtle hover effects) -> Justification (Easily scannable and visually appealing) -> Library/Method (HTML/Tailwind/Unicode). This structure turns passive information into an active exploration tool. -->
+    <!-- CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .service-card-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+        .service-card.active .service-card-details {
+            max-height: 500px;
+        }
+        .service-card.active .arrow-icon {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800">
+
+    <header class="bg-white/80 backdrop-blur-lg sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <img src="http://googleusercontent.com/file_content/1" alt="Mbulaheni Group Cleaning Logo" class="h-12">
+            <div class="hidden md:flex items-center space-x-8">
+                <a href="#services" class="text-gray-600 hover:text-amber-500 transition-colors">Our Services</a>
+                <a href="#why-us" class="text-gray-600 hover:text-amber-500 transition-colors">Why Choose Us</a>
+                <a href="#contact" class="bg-amber-500 text-white px-4 py-2 rounded-lg hover:bg-amber-600 transition-colors shadow">Request a Quote</a>
+            </div>
+            <div class="md:hidden">
+                 <a href="#contact" class="bg-amber-500 text-white px-4 py-2 rounded-lg hover:bg-amber-600 transition-colors shadow">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section id="hero" class="bg-white">
+            <div class="container mx-auto px-6 py-20 md:py-32 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold tracking-tight text-gray-900 mb-4">A Pristine Environment for Your Practice.</h2>
+                <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+                    We provide comprehensive, reliable, and professional cleaning and maintenance services, ensuring your space is welcoming, sanitary, and impeccably maintained.
+                </p>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 md:py-28">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Our Comprehensive Services</h3>
+                    <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">This section outlines the wide array of services we provide. Click on any category to see a detailed list of what's included, allowing you to easily find the solutions that fit your specific needs.</p>
+                </div>
+
+                <div class="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
+                    
+                    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" data-service="commercial">
+                        <div class="p-6 flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl">🏢</span>
+                                <h4 class="text-xl font-semibold mt-2">Commercial & Business</h4>
+                            </div>
+                            <span class="arrow-icon text-2xl text-amber-500 transition-transform">▼</span>
+                        </div>
+                        <div class="service-card-details bg-slate-50">
+                            <ul class="p-6 space-y-3 text-gray-700 list-disc list-inside">
+                                <li>Small, Medium & Large Enterprises</li>
+                                <li>Private Medical Practices</li>
+                                <li>Office & Commercial Space Cleaning</li>
+                                <li>Scheduled Maintenance (Daily, Weekly, Monthly)</li>
+                                <li>Deep Sanitization for High-Traffic Areas</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" data-service="residential">
+                        <div class="p-6 flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl">🏠</span>
+                                <h4 class="text-xl font-semibold mt-2">Residential & Move-In/Out</h4>
+                            </div>
+                            <span class="arrow-icon text-2xl text-amber-500 transition-transform">▼</span>
+                        </div>
+                        <div class="service-card-details bg-slate-50">
+                             <ul class="p-6 space-y-3 text-gray-700 list-disc list-inside">
+                                <li>Complete House Cleaning</li>
+                                <li>Move-In & Move-Out Deep Cleans</li>
+                                <li>Scheduled Residential Services</li>
+                                <li>Post-Construction Cleaning</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" data-service="specialty">
+                        <div class="p-6 flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl">✨</span>
+                                <h4 class="text-xl font-semibold mt-2">Specialized Upholstery Cleaning</h4>
+                            </div>
+                           <span class="arrow-icon text-2xl text-amber-500 transition-transform">▼</span>
+                        </div>
+                        <div class="service-card-details bg-slate-50">
+                             <ul class="p-6 space-y-3 text-gray-700 list-disc list-inside">
+                                <li>Couches & Sofas</li>
+                                <li>Office & Waiting Room Chairs</li>
+                                <li>Rugs & Mats of All Types</li>
+                                <li>Bed Mattresses (Any Size)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="service-card bg-white rounded-xl shadow-md overflow-hidden cursor-pointer" data-service="maintenance">
+                        <div class="p-6 flex justify-between items-center">
+                            <div>
+                                <span class="text-3xl">🛠️</span>
+                                <h4 class="text-xl font-semibold mt-2">Maintenance & Gardening</h4>
+                            </div>
+                            <span class="arrow-icon text-2xl text-amber-500 transition-transform">▼</span>
+                        </div>
+                        <div class="service-card-details bg-slate-50">
+                             <ul class="p-6 space-y-3 text-gray-700 list-disc list-inside">
+                                <li>Handyman & Minor Repair Services</li>
+                                <li>Garden Upkeep & Maintenance</li>
+                                <li>Lawn Care</li>
+                                <li>General Property Maintenance</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="why-us" class="py-20 md:py-28 bg-white">
+            <div class="container mx-auto px-6">
+                <div class="text-center mb-12">
+                    <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Why Choose Mbulaheni Group?</h3>
+                    <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">This section highlights the core principles that make our service stand out. Here you'll find the key reasons why businesses and homeowners trust us to maintain their properties, ensuring you can feel confident in your choice.</p>
+                </div>
+                <div class="grid md:grid-cols-3 gap-10 max-w-5xl mx-auto text-center">
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">🏆</div>
+                        <h4 class="text-xl font-semibold mb-2">Years of Experience</h4>
+                        <p class="text-gray-600">We have a proven track record serving businesses of all sizes, from small offices to large commercial enterprises.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">🤝</div>
+                        <h4 class="text-xl font-semibold mb-2">Trustworthy & Reliable</h4>
+                        <p class="text-gray-600">Our professional team is dedicated to delivering a consistently high-quality service you can depend on.</p>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-4xl mb-4">📦</div>
+                        <h4 class="text-xl font-semibold mb-2">All-In-One Solution</h4>
+                        <p class="text-gray-600">From cleaning to handyman tasks and gardening, we are your single point of contact for complete property maintenance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-20 md:py-28">
+             <div class="container mx-auto px-6 text-center">
+                 <h3 class="text-3xl md:text-4xl font-bold text-gray-900">Ready for a Cleaner Space?</h3>
+                 <p class="text-lg text-gray-600 mt-2 max-w-2xl mx-auto">Let's discuss how we can meet your specific needs. Reach out today for a no-obligation consultation and a customized quote.</p>
+                 <div class="mt-8">
+                     <a href="https://wa.me/27810274672?text=Hello,%20I%20would%20like%20to%20request%20a%20quote%20for%20cleaning%20services." class="bg-amber-500 text-white text-lg font-semibold px-8 py-4 rounded-lg hover:bg-amber-600 transition-colors shadow-lg">
+                         Get Your Free Quote
+                     </a>
+                 </div>
+             </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto px-6 py-8 text-center">
+            <p>&copy; 2025 Mbulaheni Group. All Rights Reserved.</p>
+            <p class="text-gray-400 mt-2">Your Trusted Partner in Cleaning and Maintenance.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const serviceCards = document.querySelectorAll('.service-card');
+
+            serviceCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    const wasActive = this.classList.contains('active');
+                    
+                    serviceCards.forEach(c => c.classList.remove('active'));
+
+                    if (!wasActive) {
+                        this.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+
+</body>
+</html>
